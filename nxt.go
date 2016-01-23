@@ -45,6 +45,11 @@ func (n NXT) String() string {
 	return fmt.Sprintf("NXT \"%s\": %s", n.Name(), n.Port())
 }
 
+// Export connection for custom Bluetooth messaging
+func (n NXT) Connection() Connection {
+	return n.connection
+}
+
 // Connect connects the NXT to the port and makes the NXT ready
 // to receive commands.
 func (n *NXT) Connect() error {
